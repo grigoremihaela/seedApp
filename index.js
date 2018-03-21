@@ -21,7 +21,7 @@ app.get('/', function(req, res){
 app.post('/led/on', function(req, res){
 gpio.write(7, true, function(err) {
         if (err) throw err;
-        console.log('Written True to pin');
+        console.log('Written True to pin => pin on (1)');
 	console.log(path.join(__dirname, 'public'));
 	return res.render('index', {status: "Cool!!Led is On"});
     });
@@ -32,7 +32,7 @@ gpio.write(7, true, function(err) {
 app.post('/led/off', function(req, res){
 gpio.write(7, false, function(err) {
         if (err) throw err;
-        console.log('Written False to pin');
+        console.log('Written False to pin => pin off (0)');
 	console.log(path.join(__dirname, 'public'));
 	return res.render('index',{status: "Ohh!! Led is Off"});
     });
